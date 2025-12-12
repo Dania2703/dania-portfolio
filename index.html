@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Dania Dabbah | Software & Data Engineer Portfolio</title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ['class'],
+        theme: {
+          container: {
+            center: true,
+            padding: '2rem',
+            screens: {
+              '2xl': '1400px',
+            },
+          },
+          extend: {
+            colors: {
+              border: 'hsl(217 32% 18%)',
+              input: 'hsl(217 32% 18%)',
+              ring: 'hsl(217 91% 59%)',
+              background: 'hsl(222 47% 11%)',
+              foreground: 'hsl(210 40% 98%)',
+              primary: {
+                DEFAULT: 'hsl(217 91% 59%)',
+                foreground: 'hsl(210 40% 98%)',
+              },
+              secondary: {
+                DEFAULT: 'hsl(217 32% 18%)',
+                foreground: 'hsl(210 40% 98%)',
+              },
+              destructive: {
+                DEFAULT: 'hsl(0 84% 60%)',
+                foreground: 'hsl(210 40% 98%)',
+              },
+              muted: {
+                DEFAULT: 'hsl(217 32% 18%)',
+                foreground: 'hsl(215 20% 65%)',
+              },
+              accent: {
+                DEFAULT: 'hsl(185 70% 50%)', /* Cyan/Teal Accent */
+                foreground: 'hsl(222 47% 11%)',
+              },
+              popover: {
+                DEFAULT: 'hsl(222 47% 11%)',
+                foreground: 'hsl(210 40% 98%)',
+              },
+              card: {
+                DEFAULT: 'hsl(222 47% 11%)',
+                foreground: 'hsl(210 40% 98%)',
+              },
+            },
+            borderRadius: {
+              lg: '0.5rem',
+              md: 'calc(0.5rem - 2px)',
+              sm: 'calc(0.5rem - 4px)',
+            },
+            keyframes: {
+              'accordion-down': {
+                from: { height: '0' },
+                to: { height: 'var(--radix-accordion-content-height)' },
+              },
+              'accordion-up': {
+                from: { height: 'var(--radix-accordion-content-height)' },
+                to: { height: '0' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              'accordion-down': 'accordion-down 0.2s ease-out',
+              'accordion-up': 'accordion-up 0.2s ease-out',
+              'fade-in': 'fade-in 1s ease-out forwards',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Base styles from the original index.css */
+      @layer base {
+        :root {
+          --background: 222 47% 11%;
+          --foreground: 210 40% 98%;
+          --card: 222 47% 11%;
+          --card-foreground: 210 40% 98%;
+          --popover: 222 47% 11%;
+          --popover-foreground: 210 40% 98%;
+          --primary: 217 91% 59%;
+          --primary-foreground: 210 40% 98%;
+          --secondary: 217 32% 18%;
+          --secondary-foreground: 210 40% 98%;
+          --muted: 217 32% 18%;
+          --muted-foreground: 215 20% 65%;
+          --accent: 185 70% 50%; /* Cyan/Teal Accent */
+          --accent-foreground: 222 47% 11%;
+          --destructive: 0 84% 60%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 217 32% 18%;
+          --input: 217 32% 18%;
+          --ring: 217 91% 59%;
+          --radius: 0.5rem;
+        }
+      }
+      
+      @layer base {
+        * {
+          @apply border-border;
+        }
+        body {
+          @apply bg-background text-foreground;
+          font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'IBM Plex Mono', monospace;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Navigation -->
+      <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-14 max-w-6xl items-center justify-between">
+          <a href="#" class="text-xl font-bold text-accent">Dania Dabbah</a>
+          <nav class="hidden md:flex items-center space-x-6">
+            <a href="#about" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">About</a>
+            <a href="#skills" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">Skills</a>
+            <a href="#experience" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">Experience</a>
+            <a href="#education" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">Education</a>
+            <a href="#projects" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">Projects</a>
+            <a href="#contact" class="text-sm font-medium text-foreground/70 hover:text-accent transition-colors">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+        style="
+          background-image: url('dania_portfolio/client/public/images/hero-bg.png');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        "
+      >
+        <!-- Overlay for text readability -->
+        <div class="absolute inset-0 bg-background/70"></div>
+
+        <div class="container relative z-10 max-w-4xl mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text Content -->
+            <div class="space-y-8 animate-fade-in">
+              <div class="space-y-4">
+                <h1 class="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+                  Dania Dabbah
+                </h1>
+                <p class="text-xl text-muted-foreground font-light">
+                  Software Engineer | Data Scientist | ML Enthusiast | QA Passionate
+                </p>
+              </div>
+
+              <p class="text-base text-foreground/80 leading-relaxed max-w-lg">
+                Building scalable systems and data-driven solutions. Passionate about
+                software quality, machine learning, and creating impact through
+                technology.
+              </p>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a
+                  href="#projects"
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 py-2 flex items-center gap-2 group"
+                >
+                  View My Work
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent/10 h-10 px-4 py-2 border-accent text-accent"
+                >
+                  Get in Touch
+                </a>
+              </div>
+
+              <!-- Social Links -->
+              <div class="flex gap-4 pt-4">
+                <a
+                  href="https://linkedin.com/in/dania-dabbah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors group"
+                  aria-label="LinkedIn"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-foreground group-hover:text-accent"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a
+                  href="https://github.com/Dania2703"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors group"
+                  aria-label="GitHub"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-foreground group-hover:text-accent"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.5.25-1.15.2-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.35 2.35 0 3.5-.53 1.06-.9 2.3-.78 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-5-2"/><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.5.25-1.15.2-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.35 2.35 0 3.5-.53 1.06-.9 2.3-.78 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                </a>
+                <a
+                  href="mailto:dabbahdania25@gmail.com"
+                  class="p-3 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors group"
+                  aria-label="Email"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-foreground group-hover:text-accent"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Decorative Element (Removed Full-Stack Icon) -->
+            <div class="hidden md:flex items-center justify-center">
+              <!-- Empty space to maintain layout balance, or a simple placeholder -->
+            </div>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-accent rounded-full flex items-start justify-center p-2">
+              <div class="w-1 h-2 bg-accent rounded-full animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 md:py-32 bg-background">
+        <div class="container max-w-4xl">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Left: Heading -->
+            <div class="md:col-span-1">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground sticky top-20">
+                About Me
+              </h2>
+              <div class="w-12 h-1 bg-accent mt-6"></div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="md:col-span-2 space-y-6">
+              <p class="text-lg text-foreground/90 leading-relaxed">
+                I'm a Software and Information Systems Engineering student at
+                Ben-Gurion University of the Negev, with hands-on experience
+                across Software Development, Data Science, Machine Learning, Deep
+                Learning, and Quality Assurance.
+              </p>
+
+              <p class="text-lg text-foreground/90 leading-relaxed">
+                I enjoy building end-to-end systems, working with data-driven
+                logic, and ensuring high-quality, reliable software through
+                structured testing and automation concepts. I'm highly motivated,
+                a fast learner, and actively seeking a student or junior position
+                in Software Engineering, Data/ML, or QA.
+              </p>
+
+              <!-- Stats Grid -->
+              <div class="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+                <div class="space-y-2">
+                  <div class="text-3xl font-bold text-accent">83.9</div>
+                  <p class="text-sm text-muted-foreground">GPA</p>
+                </div>
+                <div class="space-y-2">
+                  <div class="text-3xl font-bold text-accent">6+</div>
+                  <p class="text-sm text-muted-foreground">Major Projects</p>
+                </div>
+                <div class="space-y-2">
+                  <div class="text-3xl font-bold text-accent">6</div>
+                  <p class="text-sm text-muted-foreground">Languages</p>
+                </div>
+              </div>
+
+              <!-- Key Strengths -->
+              <div class="space-y-4 pt-8">
+                <h3 class="text-xl font-bold text-foreground">Key Strengths</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-foreground/80">Full-stack system design and implementation</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-foreground/80">Data-driven problem solving with ML/AI</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-foreground/80">Software quality assurance and testing</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-foreground/80">Fast learner with strong fundamentals</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-foreground/80">Collaborative and detail-oriented approach</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 md:py-32 bg-secondary/30">
+        <div class="container max-w-6xl">
+          <div class="space-y-16">
+            <!-- Section Header -->
+            <div class="space-y-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground">
+                Skills & Expertise
+              </h2>
+              <div class="w-12 h-1 bg-accent"></div>
+              <p class="text-lg text-foreground/70 max-w-2xl">
+                A comprehensive toolkit built through academic coursework and
+                hands-on project experience.
+              </p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Programming Languages -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  Programming Languages
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Python</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Java</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">C</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">C++</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">C#</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">JavaScript</span>
+                </div>
+              </div>
+              <!-- Backend & Full-Stack -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  Backend & Full-Stack
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">FastAPI</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Node.js</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">React</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Vue 3</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">JWT</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">SQLAlchemy</span>
+                </div>
+              </div>
+              <!-- Data Science & ML -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  Data Science & ML
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">NumPy</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Pandas</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">scikit-learn</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">PyTorch</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">SBERT</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">CNNs</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Transfer Learning</span>
+                </div>
+              </div>
+              <!-- Databases -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  Databases
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">PostgreSQL</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">MySQL</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">SQLite</span>
+                </div>
+              </div>
+              <!-- QA & Testing -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  QA & Testing
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">System Testing</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Test Case Design</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Bug Reporting</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">BDD (Cucumber)</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Model-Based Testing</span>
+                </div>
+              </div>
+              <!-- Tools & Environments -->
+              <div class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 transition-all duration-300">
+                <h3 class="text-lg font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                  Tools & Environments
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Git</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">GitHub</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Linux</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Bash</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">VS Code</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">IntelliJ</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">PyCharm</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/80 text-sm rounded border border-border hover:border-accent/50 hover:bg-secondary/80 transition-all cursor-default">Jupyter Notebook</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Concepts -->
+            <div class="p-8 border border-border rounded-lg bg-card">
+              <h3 class="text-xl font-bold text-foreground mb-6">
+                Core Concepts & Methodologies
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">OOP</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">Data Structures</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">Algorithms</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">REST APIs</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">Client–Server Architecture</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">Agile/Scrum</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">SDLC/STLC</div>
+                <div class="p-3 bg-secondary rounded border border-border text-center text-sm text-foreground/80 hover:border-accent/50 hover:bg-secondary/80 transition-all">System Design</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 md:py-32 bg-background">
+        <div class="container max-w-5xl">
+          <div class="space-y-16">
+            <!-- Section Header -->
+            <div class="space-y-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground">
+                Experience & Activities
+              </h2>
+              <div class="w-12 h-1 bg-accent"></div>
+              <p class="text-lg text-foreground/70 max-w-2xl">
+                Professional experience and community involvement that shaped my
+                technical and interpersonal skills.
+              </p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="space-y-6">
+              <!-- Experience 1 -->
+              <div class="group relative p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-4 top-8 w-8 h-8 bg-background border-2 border-accent rounded-full hidden md:flex items-center justify-center">
+                  <div class="w-3 h-3 bg-accent rounded-full"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-4">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <div>
+                      <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                        Technical Support Expert
+                      </h3>
+                      <p class="text-lg text-accent mt-1">Cellcom</p>
+                    </div>
+                  </div>
+
+                  <p class="text-foreground/80 leading-relaxed">
+                    Troubleshooting, networking, customer-facing technical support
+                  </p>
+
+                  <!-- Skills -->
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Technical Support</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Networking</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Problem Solving</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Experience 2 -->
+              <div class="group relative p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-4 top-8 w-8 h-8 bg-background border-2 border-accent rounded-full hidden md:flex items-center justify-center">
+                  <div class="w-3 h-3 bg-accent rounded-full"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-4">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <div>
+                      <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                        Social Mentor
+                      </h3>
+                      <p class="text-lg text-accent mt-1">Ben-Gurion University</p>
+                    </div>
+                  </div>
+
+                  <p class="text-foreground/80 leading-relaxed">
+                    Guided freshman engineering students through their academic journey
+                  </p>
+
+                  <!-- Skills -->
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Mentoring</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Leadership</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Communication</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Experience 3 -->
+              <div class="group relative p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-4 top-8 w-8 h-8 bg-background border-2 border-accent rounded-full hidden md:flex items-center justify-center">
+                  <div class="w-3 h-3 bg-accent rounded-full"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-4">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <div>
+                      <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                        Volunteer Tutor
+                      </h3>
+                      <p class="text-lg text-accent mt-1">Community</p>
+                    </div>
+                  </div>
+
+                  <p class="text-foreground/80 leading-relaxed">
+                    Assisted students in programming and algorithms
+                  </p>
+
+                  <!-- Skills -->
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Teaching</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Programming</span>
+                    <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors">Algorithms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="py-20 md:py-32 bg-secondary/30">
+        <div class="container max-w-5xl">
+          <div class="space-y-16">
+            <!-- Section Header -->
+            <div class="space-y-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground">
+                Education
+              </h2>
+              <div class="w-12 h-1 bg-accent"></div>
+            </div>
+
+            <!-- Degree -->
+            <div class="space-y-8">
+              <div class="border-l-2 border-accent pl-8 py-4">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-foreground">
+                      B.Sc. in Software and Information Systems Engineering
+                    </h3>
+                    <p class="text-lg text-accent mt-2">
+                      Ben-Gurion University of the Negev
+                    </p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm text-muted-foreground">2022 – Present</p>
+                  </div>
+                </div>
+
+                <!-- GPA Highlight -->
+                <div class="mt-6 p-4 bg-card border border-border rounded-lg">
+                  <p class="text-sm text-muted-foreground mb-1">
+                    Current GPA
+                  </p>
+                  <p class="text-3xl font-bold text-accent">83.9</p>
+                </div>
+              </div>
+
+              <!-- Relevant Coursework -->
+              <div class="space-y-6">
+                <h4 class="text-xl font-bold text-foreground">
+                  Relevant Coursework
+                </h4>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <!-- Course 1 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Software Quality Engineering</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">93</span>
+                    </div>
+                  </div>
+                  <!-- Course 2 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Databases</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">99</span>
+                    </div>
+                  </div>
+                  <!-- Course 3 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Data Structures</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">81</span>
+                    </div>
+                  </div>
+                  <!-- Course 4 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Algorithms</p>
+                      <span class="px-3 py-1 bg-secondary text-muted-foreground rounded text-xs flex-shrink-0">In Progress</span>
+                    </div>
+                  </div>
+                  <!-- Course 5 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Operating Systems</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">81</span>
+                    </div>
+                  </div>
+                  <!-- Course 6 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Internet Programming Environments</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">89</span>
+                    </div>
+                  </div>
+                  <!-- Course 7 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Advanced Topics in Java Programming</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">86</span>
+                    </div>
+                  </div>
+                  <!-- Course 8 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Machine Learning</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">79</span>
+                    </div>
+                  </div>
+                  <!-- Course 9 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Introduction to AI</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">76</span>
+                    </div>
+                  </div>
+                  <!-- Course 10 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Big Data</p>
+                      <span class="px-3 py-1 bg-secondary text-muted-foreground rounded text-xs flex-shrink-0">In Progress</span>
+                    </div>
+                  </div>
+                  <!-- Course 11 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Practical Deep Learning Workshop</p>
+                      <span class="px-3 py-1 bg-secondary text-muted-foreground rounded text-xs flex-shrink-0">In Progress</span>
+                    </div>
+                  </div>
+                  <!-- Course 12 -->
+                  <div class="p-4 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors">
+                    <div class="flex items-start justify-between gap-3">
+                      <p class="text-foreground font-medium flex-1">Analysis & Decision-Making in Information Systems</p>
+                      <span class="px-3 py-1 bg-accent/20 text-accent rounded text-sm font-semibold flex-shrink-0">100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 md:py-32 bg-background">
+        <div class="container max-w-5xl">
+          <div class="space-y-16">
+            <!-- Section Header -->
+            <div class="space-y-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground">
+                Featured Projects
+              </h2>
+              <div class="w-12 h-1 bg-accent"></div>
+              <p class="text-lg text-foreground/70 max-w-2xl">
+                A selection of key projects showcasing full-stack development,
+                machine learning, and quality assurance expertise.
+              </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="space-y-6">
+              <!-- Project 1 -->
+              <div class="group p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Project Header -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                      UniTutor — Smart Academic Tutoring Platform
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-accent/50 text-accent">Final Project</span>
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-accent text-accent-foreground">In Progress</span>
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+
+                <!-- Description -->
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                  Designed and developed a scalable academic tutoring platform connecting university students with high-achieving peers. Implemented automated tutor–student matching using data-driven and NLP-based logic, scheduling, session management, ratings, and notifications, with AI-assisted support for immediate response.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Node.js</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">PostgreSQL</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">REST APIs</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">NLP</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">React/Vue</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Git</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Agile</span>
+                </div>
+              </div>
+              <!-- Project 2 -->
+              <div class="group p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Project Header -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                      Smart Study Planner — Analytics & Full-Stack System
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-accent/50 text-accent">Academic Project</span>
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary text-secondary-foreground">Completed</span>
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+
+                <!-- Description -->
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                  Built a full-stack application for managing courses, tasks, and study sessions with REST APIs, JWT authentication, relational data modeling, and backend business logic for KPIs and productivity analytics. Integrated analytics into frontend dashboards.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Python</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">FastAPI</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">SQLAlchemy</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">SQLite</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">React</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">JWT</span>
+                </div>
+              </div>
+              <!-- Project 3 -->
+              <div class="group p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Project Header -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                      ResumeMatch — NLP & Machine Learning Pipeline
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-accent/50 text-accent">ML Project</span>
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary text-secondary-foreground">Completed</span>
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+
+                <!-- Description -->
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                  Developed an end-to-end job–candidate matching system using NLP and ML. Implemented text preprocessing, Sentence-BERT embeddings, feature engineering, ML models, and SHAP-based explainability.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Python</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">scikit-learn</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">XGBoost</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">SBERT</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">SHAP</span>
+                </div>
+              </div>
+              <!-- Project 4 -->
+              <div class="group p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Project Header -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                      Practical Deep Learning — Fish Species Classification
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-accent/50 text-accent">Deep Learning</span>
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary text-secondary-foreground">Completed</span>
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+
+                <!-- Description -->
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                  Built and optimized deep learning models for image classification using custom CNNs and transfer learning. Achieved near-perfect accuracy using data augmentation, cross-validation, and hybrid deep feature extraction with SVM.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Python</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">TensorFlow</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Keras</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">CNNs</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Transfer Learning</span>
+                </div>
+              </div>
+              <!-- Project 5 -->
+              <div class="group p-6 md:p-8 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300">
+                <!-- Project Header -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                      Software Quality Engineering — System Testing (Moodle)
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-accent/50 text-accent">QA Project</span>
+                      <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary text-secondary-foreground">Completed</span>
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+
+                <!-- Description -->
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                  Performed system-level testing on the Moodle LMS. Designed test scenarios based on user stories, executed BDD tests with Cucumber, applied model-based testing with Provengo, and documented defects.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Cucumber</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Provengo</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">System Testing</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">Moodle</span>
+                  <span class="px-3 py-1 bg-secondary text-foreground/70 text-xs md:text-sm rounded border border-border hover:border-accent/50 transition-colors font-mono">MySQL</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Projects -->
+            <div class="p-8 border border-border rounded-lg bg-secondary/30">
+              <h3 class="text-xl font-bold text-foreground mb-6">
+                Additional Projects
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-foreground">
+                      Super-Lee — Supplier & Inventory Management System
+                    </p>
+                    <p class="text-sm text-muted-foreground mt-1">
+                      Java, JDBC, SQLite
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-foreground">
+                      Maze Project — Algorithms & Client–Server Application
+                    </p>
+                    <p class="text-sm text-muted-foreground mt-1">
+                      Java, Multithreading
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-foreground">
+                      RecipeApp — Full-Stack Data-Driven Application
+                    </p>
+                    <p class="text-sm text-muted-foreground mt-1">
+                      Vue, Node.js, MySQL
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 md:py-32 bg-secondary/30">
+        <div class="container max-w-4xl">
+          <div class="space-y-12">
+            <!-- Section Header -->
+            <div class="text-center space-y-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-foreground">
+                Get In Touch
+              </h2>
+              <div class="w-12 h-1 bg-accent mx-auto"></div>
+              <p class="text-lg text-foreground/70 max-w-2xl mx-auto">
+                I'm always interested in hearing about new opportunities and
+                interesting projects. Feel free to reach out!
+              </p>
+            </div>
+
+            <!-- Contact Information Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Email -->
+              <a
+                href="mailto:dabbahdania25@gmail.com"
+                class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300 text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-accent group-hover:scale-110 transition-transform"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <h3 class="font-bold text-foreground mb-2">Email</h3>
+                <p class="text-sm text-foreground/70 break-all">
+                  dabbahdania25@gmail.com
+                </p>
+              </a>
+
+              <!-- Phone -->
+              <a
+                href="tel:+972509277222"
+                class="group p-6 border border-border rounded-lg bg-card hover:border-accent/50 hover:bg-secondary/20 transition-all duration-300 text-center"
+              >
+                <div class="flex justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-accent group-hover:scale-110 transition-transform"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <h3 class="font-bold text-foreground mb-2">Phone</h3>
+                <p class="text-sm text-foreground/70">050-9277222</p>
+              </a>
+
+              <!-- Location -->
+              <div class="p-6 border border-border rounded-lg bg-card text-center">
+                <div class="flex justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-accent"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <h3 class="font-bold text-foreground mb-2">Location</h3>
+                <p class="text-sm text-foreground/70">
+                  Deir al-Assad, Israel
+                </p>
+              </div>
+            </div>
+
+            <!-- Primary CTA -->
+            <div class="text-center space-y-6">
+              <a
+                href="mailto:dabbahdania25@gmail.com"
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg"
+              >
+                Send Me an Email
+              </a>
+
+              <!-- Social Links -->
+              <div class="flex justify-center gap-4">
+                <a
+                  href="https://linkedin.com/in/dania-dabbah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 bg-card border border-border rounded-lg hover:border-accent/50 hover:bg-secondary/50 transition-all group"
+                  aria-label="LinkedIn"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-foreground group-hover:text-accent transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a
+                  href="https://github.com/Dania2703"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 bg-card border border-border rounded-lg hover:border-accent/50 hover:bg-secondary/50 transition-all group"
+                  aria-label="GitHub"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-foreground group-hover:text-accent transition-colors"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.5.25-1.15.2-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.35 2.35 0 3.5-.53 1.06-.9 2.3-.78 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-5-2"/></svg>
+                </a>
+                <a
+                  href="mailto:dabbahdania25@gmail.com"
+                  class="p-3 bg-card border border-border rounded-lg hover:border-accent/50 hover:bg-secondary/50 transition-all group"
+                  aria-label="Email"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-foreground group-hover:text-accent transition-colors"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="p-6 border border-border rounded-lg bg-card text-center">
+              <h3 class="font-bold text-foreground mb-4">Languages</h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Arabic</span>
+                  <span class="text-foreground/60"> — Native</span>
+                </div>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Hebrew</span>
+                  <span class="text-foreground/60"> — Professional Working Proficiency</span>
+                </div>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">English</span>
+                  <span class="text-foreground/60"> — Professional Working Proficiency</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-secondary/30 border-t border-border py-12 md:py-16">
+        <div class="container max-w-6xl mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Brand -->
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-foreground">Dania Dabbah</h3>
+              <p class="text-sm text-foreground/60">
+                Software Engineer | Data Scientist | ML Enthusiast | QA Passionate
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-3">
+              <h4 class="font-semibold text-foreground text-sm">Quick Links</h4>
+              <div class="space-y-2 flex flex-col">
+                <a href="#about" class="text-sm text-foreground/60 hover:text-accent transition-colors">About</a>
+                <a href="#projects" class="text-sm text-foreground/60 hover:text-accent transition-colors">Projects</a>
+                <a href="#contact" class="text-sm text-foreground/60 hover:text-accent transition-colors">Contact</a>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="space-y-3">
+              <h4 class="font-semibold text-foreground text-sm">Connect</h4>
+              <div class="space-y-2 flex flex-col">
+                <a href="https://linkedin.com/in/dania-dabbah" target="_blank" rel="noopener noreferrer" class="text-sm text-foreground/60 hover:text-accent transition-colors">LinkedIn</a>
+                <a href="https://github.com/Dania2703" target="_blank" rel="noopener noreferrer" class="text-sm text-foreground/60 hover:text-accent transition-colors">GitHub</a>
+                <a href="mailto:dabbahdania25@gmail.com" class="text-sm text-foreground/60 hover:text-accent transition-colors">Email</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="border-t border-border pt-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p class="text-sm text-foreground/50">
+                © 2025 Dania Dabbah. All rights reserved.
+              </p>
+              <p class="text-xs text-foreground/40">
+                Designed & Built with Tailwind CSS
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>
